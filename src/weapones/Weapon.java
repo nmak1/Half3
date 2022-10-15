@@ -1,11 +1,14 @@
 package weapones;
 
-import java.util.Arrays;
 
 public class Weapon {
+    int shots ;
+    int powerDefeat;
+    public Weapon(){
+
+    }
     public void shot(int i) {
         System.out.println("Стреляем-");
     }
-
 
 }
