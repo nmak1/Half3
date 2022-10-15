@@ -1,20 +1,35 @@
 import weapones.*;
 
+import java.util.Arrays;
+
 public class Player {
-    protected Weapon[] weaponSlots = new Weapon[]{new Pistol(), new MachineGun(),
-            new Granatamet(), new Slingshot(), new WaterGun() };
+
+    protected Weapon [] weapons = new Weapon[5];
+
+    public Player (){
+
+
+    }
+
 
     public int getSlotsCount() {
-        return weaponSlots.length;
+        return weapons.length;
     }
 
     public void shotWithWeapon(int slot) {
-        if (slot < -1 || slot > 4) {
+        if (slot < 0 || (slot > weapons.length)) {
             System.out.println("такого оружия нет");
         } else {
-            Weapon weapon = weaponSlots[slot];
+            Weapon weapon = weapons[slot];
             weapon.shot(slot);
         }
 
+    }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "weapons=" + Arrays.toString(weapons) +
+                '}';
     }
 }
